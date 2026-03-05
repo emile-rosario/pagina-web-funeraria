@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { "primary": "#1a2a47", "background-light": "#f6f7f8", "background-dark": "#14181e" },
+          fontFamily: { "display": ["Inter", "sans-serif"] },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80 px-4 md:px-10 lg:px-40 py-4">
+    <div class="mx-auto flex max-w-[1200px] items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+          <span class="material-symbols-outlined text-2xl">account_balance</span>
+        </div>
+        <h2 class="text-xl font-bold tracking-tight text-primary dark:text-slate-100">Funerarias Rancier</h2>
+      </a>
+
+      <nav class="hidden md:flex flex-1 justify-center gap-8">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
+        <a class="text-sm font-bold text-primary dark:text-blue-400 border-b-2 border-primary" href="servicios.html">Servicios</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="planes-funerarios.html">Planes</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contacto.html" class="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-white transition-opacity hover:opacity-90">
+          Llamar ahora
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-4 py-12 md:px-10 lg:px-20">
+
+    <!-- Hero -->
+    <section class="mb-16 flex flex-col gap-6 text-center md:text-left">
+      <div class="flex flex-col gap-3">
+        <span class="text-sm font-bold uppercase tracking-widest text-primary/60 dark:text-slate-400">Nuestra Propuesta</span>
+        <h1 class="text-4xl font-black leading-tight tracking-tight text-slate-900 dark:text-slate-50 md:text-5xl lg:text-6xl">
+          Nuestros Servicios Integrales
+        </h1>
+        <p class="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+          Brindamos apoyo, serenidad y dignidad en cada paso del camino, asegurando que cada detalle sea manejado con la máxima profesionalidad.
+        </p>
+      </div>
+    </section>
+
+    <!-- Grid de Servicios -->
+    <section class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Arreglos Funerarios -->
+      <div class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300">
+          <span class="material-symbols-outlined text-3xl">local_florist</span>
+        </div>
+        <div class="h-48 w-full mb-6 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+          <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5K3CokmQQ1Fgqd7Zmf35LWmx4YYAoDBB6dbMHtJYQP7V1kVx3RpD-wETT1kvQn7Yjv1mv2CU0gSPc5FH7XJhfjVAi3WDrS1CW88IWeSU-Ws3BaqxA2_Fy8m4bvgQnB_VrSZ-wh4ev4C0zFvXZ2rAmQFNqnoCLIvMizyiHdKnEdgmu2vcxSig6d-Q2Al3HyDPzQkC_NZy7rzx1LM69PDv8ht-WakZlitl6FRolWyEc7n1Hp3Q3M_RWhN4QPf-ycm8LGfMrmJrcetwx')"></div>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">Arreglos Funerarios</h3>
+        <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Ofrendas florales y decoración personalizada para honrar la memoria de sus seres queridos con elegancia y respeto.</p>
+        <a href="contacto.html" class="flex items-center gap-2 text-sm font-bold text-primary dark:text-blue-400 hover:underline">
+          Más información <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Traslado -->
+      <div class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300">
+          <span class="material-symbols-outlined text-3xl">flight_takeoff</span>
+        </div>
+        <div class="h-48 w-full mb-6 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+          <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-IOAqt7tmsW9kwgm8Yzh41oITLpdTW8eHhxuxqz7mMzkRJAdkc7_YbXC5sme91HN2ikVycmmnzm2virheFaVsaNNeHkgIjAMDbL0teAaBWhKagxNuWvkSDIzWoNdGabvh_BFE4zvfZ-MjUle8rh9HnnHCyJGAjyYI6qS9D1mQyeDFGSVEFY-NPyMaHiZvF8ims8OI13A03w7I_z5pTHMIvb4LhX7TPzzObRLzF8S_1lyhb-K9simqXHE0NjmxM_xwn_2lbpHRs8Kc')"></div>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">Traslado Nacional e Internacional</h3>
+        <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Logística integral para el transporte seguro y digno de restos mortales dentro y fuera del país, gestionando toda la documentación.</p>
+        <a href="contacto.html" class="flex items-center gap-2 text-sm font-bold text-primary dark:text-blue-400 hover:underline">
+          Más información <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Embalsamamiento -->
+      <div class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300">
+          <span class="material-symbols-outlined text-3xl">medical_services</span>
+        </div>
+        <div class="h-48 w-full mb-6 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+          <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd2zXjkqqZP1GdLcnDxsEopsbakRgJK5seSb9BdsBX-sjVm1ymWCDuzYt9RW7jtBoleqx3KCafSdSzPScTHr3Ap8P9ShoYksUvsmysavhWain68MzpERKaZQaGXrAyrwdOn22UUEtfoTD8QQk7OJLmRIOJxuKanY0kpbpfUh8La_OJb4ZyyFjTmP4YXETr1JwceSX9i6xVab4dCV3uVZtDSTti74VNKAbtYqf9bwNpXAmCQ_jJ3_eulXO2lEfHSbQJ1ueyeUEnf4dV')"></div>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">Embalsamamiento</h3>
+        <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Preparación profesional con el mayor respeto, utilizando técnicas avanzadas para asegurar el cuidado estético y la preservación.</p>
+        <a href="contacto.html" class="flex items-center gap-2 text-sm font-bold text-primary dark:text-blue-400 hover:underline">
+          Más información <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Cremación -->
+      <div class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300">
+          <span class="material-symbols-outlined text-3xl">local_fire_department</span>
+        </div>
+        <div class="h-48 w-full mb-6 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+          <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDY-TK5LtvpiGMx6RozFXUZrmPlTQX-zd96DdQKOKOXc8AN66MqjQIESyQo38GQ81E49MWCpjirPIVvMKQIdN0AeMtkla5dLNCBGH0RrlE3ugpJ5hDZXxrMNCL2dB4lxv0V20vbIHTcPm2Ukw78pVctmSGjZ1UpwadkN-YqBQUvYR33dj8_kkqvLMFJ0XhBQFgX6_WYttm3BjKVgjW7CGoz78dg0ap9UJSYACXSo_a1GVC_19yU2YhhvkTLN305V0oAmO02B4TJUAar')"></div>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">Cremación</h3>
+        <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Servicios de cremación con urnas exclusivas, ceremonias de despedida privadas y opciones de nichos en nuestro columbario.</p>
+        <a href="catalogo.html" class="flex items-center gap-2 text-sm font-bold text-primary dark:text-blue-400 hover:underline">
+          Ver urnas disponibles <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Asistencia Legal -->
+      <div class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300">
+          <span class="material-symbols-outlined text-3xl">balance</span>
+        </div>
+        <div class="h-48 w-full mb-6 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+          <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBufMR0fvMSqhQyU9EHyFIJ-Ktmqdqoi-TVupcbsvcUv5ZEH_XtYaFLYGf-gFkXgGcm__dfuOJ356_DyEwhQyz7wDPrl206VTAz9OJYzDVZqRjA_d0bMKCUHTfm-X9cpZwB4IAs2kGKkXCmqbJnKxxT-dYfenBvaDpeKl_SqLQoeKy2hWgWnll3UHTgpVfgBuqGP0gYSRKWSvXXQs1oeNxjmEN6fjbAJ3l2fQhv7sv4kI-tz0S7vFeJB0x9jJBLSvviFNezW4dKY4pA')"></div>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">Asistencia Legal</h3>
+        <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Gestión completa de trámites gubernamentales y asesoría jurídica especializada para aliviar la carga administrativa en momentos difíciles.</p>
+        <a href="contacto.html" class="flex items-center gap-2 text-sm font-bold text-primary dark:text-blue-400 hover:underline">
+          Más información <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="flex flex-col items-center justify-center rounded-xl bg-primary p-8 text-center text-white shadow-xl dark:bg-slate-800">
+        <span class="material-symbols-outlined mb-4 text-5xl opacity-80">support_agent</span>
+        <h3 class="mb-3 text-2xl font-bold">¿Necesitas ayuda inmediata?</h3>
+        <p class="mb-8 text-sm text-slate-200">Estamos disponibles las 24 horas del día, los 365 días del año para asesorarte.</p>
+        <a href="contacto.html" class="w-full rounded-lg bg-white px-6 py-3 text-sm font-bold text-primary transition-colors hover:bg-slate-100 block text-center">
+          Contactar ahora
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-primary/10 bg-white px-4 py-12 dark:border-slate-800 dark:bg-background-dark md:px-10 lg:px-40">
+    <div class="mx-auto flex max-w-[1200px] flex-col gap-8 md:flex-row md:justify-between">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded bg-primary text-white flex items-center justify-center">
+            <span class="material-symbols-outlined text-lg">account_balance</span>
+          </div>
+          <h2 class="text-lg font-bold text-primary dark:text-slate-100">Funerarias Rancier</h2>
+        </div>
+        <p class="max-w-xs text-xs text-slate-500 dark:text-slate-400">Acompañando a las familias con dignidad y respeto desde hace más de 50 años.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-10 md:grid-cols-3">
+        <div class="flex flex-col gap-3">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Navegación</h4>
+          <a class="text-xs text-slate-500 hover:text-primary dark:text-slate-400" href="index.html">Inicio</a>
+          <a class="text-xs text-slate-500 hover:text-primary dark:text-slate-400" href="servicios.html">Servicios</a>
+          <a class="text-xs text-slate-500 hover:text-primary dark:text-slate-400" href="planes-funerarios.html">Planes</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Legal</h4>
+          <a class="text-xs text-slate-500 hover:text-primary dark:text-slate-400" href="#">Privacidad</a>
+          <a class="text-xs text-slate-500 hover:text-primary dark:text-slate-400" href="#">Términos</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Contacto</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Calle Principal 123</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">+1 (234) 567-890</p>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 max-w-[1200px] border-t border-slate-100 pt-8 text-center text-[10px] text-slate-400 dark:border-slate-800">
+      © 2024 Funerarias Rancier. Todos los derechos reservados.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Registro | Funerarias Rancier</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { "primary": "#1a2a47", "background-light": "#f6f7f8", "background-dark": "#14181e" },
+          fontFamily: { "display": ["Inter"] }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+
+  <header class="w-full bg-white dark:bg-background-dark border-b p-4">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 text-primary dark:text-slate-100">
+      <span class="material-symbols-outlined">church</span>
+      <span class="text-xl font-bold">Funerarias Rancier</span>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center p-4 py-12">
+    <div
+      class="w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 p-8">
+      <h1 class="text-2xl font-bold mb-6">Crear Cuenta</h1>
+
+      <form id="register-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Nombre Completo</label>
+          <input class="w-full px-3 py-2 border rounded-lg dark:bg-slate-800" id="nombre" placeholder="Emile Rosario"
+            required type="text" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Correo Electrónico</label>
+          <input class="w-full px-3 py-2 border rounded-lg dark:bg-slate-800" id="email"
+            placeholder="ejemplo@correo.com" required type="email" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Teléfono</label>
+          <input class="w-full px-3 py-2 border rounded-lg dark:bg-slate-800" id="telefono" placeholder="8091234567"
+            required type="text" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Contraseña</label>
+          <input class="w-full px-3 py-2 border rounded-lg dark:bg-slate-800" id="password" placeholder="••••••••"
+            required type="password" />
+        </div>
+        <button class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
+          type="submit">
+          Registrarse
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- API Helper (funciones centralizadas) -->
+  <script src="assets/js/api.js"></script>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const telefono = document.getElementById('telefono').value;
+      const password = document.getElementById('password').value;
+      await registrarUsuario(nombre, email, telefono, password);
+    });
+  </script>
+
+</body>
+
+</html>

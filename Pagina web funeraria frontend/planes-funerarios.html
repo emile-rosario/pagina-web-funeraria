@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { "primary": "#1a2a47", "background-light": "#f6f7f8", "background-dark": "#14181e" },
+          fontFamily: { "display": ["Inter"] },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+
+  <!-- HEADER -->
+  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 py-4 lg:px-40 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+    <a href="index.html" class="flex items-center gap-4 text-primary dark:text-slate-100">
+      <div class="size-6 text-primary dark:text-slate-200">
+        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+        </svg>
+      </div>
+      <h2 class="text-lg font-bold leading-tight tracking-tight">Funerarias Rancier</h2>
+    </a>
+
+    <div class="flex flex-1 justify-end gap-8 items-center">
+      <nav class="hidden md:flex items-center gap-9">
+        <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="index.html">Inicio</a>
+        <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="servicios.html">Servicios</a>
+        <a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="planes-funerarios.html">Planes</a>
+        <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="contacto.html">Contacto</a>
+      </nav>
+      <a href="checkout-pagos.html" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-slate-50 text-sm font-bold hover:bg-primary/90 transition-all">
+        <span>Afiliarse</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-1 flex flex-col items-center py-10 px-6 lg:px-40">
+
+    <!-- Hero -->
+    <div class="max-w-[1200px] w-full mb-12">
+      <div class="flex flex-col gap-4 text-center md:text-left">
+        <h1 class="text-primary dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-tight">
+          Planes de Previsión Exequial
+        </h1>
+        <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">
+          Asegure la tranquilidad de su familia con nuestras opciones de cobertura anticipada,
+          diseñadas para brindar apoyo en los momentos más difíciles.
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid de Planes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1200px] mb-20">
+
+      <!-- Plan Básico -->
+      <div class="flex flex-col gap-6 rounded-xl border border-primary/10 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-primary dark:text-slate-100 text-xl font-bold">Plan Básico</h3>
+            <span class="text-slate-50 text-[10px] uppercase font-bold tracking-wider rounded px-2 py-1 bg-primary/60">Esencial</span>
+          </div>
+          <div class="flex items-baseline gap-1 mt-2">
+            <span class="text-primary dark:text-slate-100 text-3xl font-black leading-tight">RD$ 1,500</span>
+            <span class="text-slate-500 text-sm font-medium">/mes</span>
+          </div>
+        </div>
+        <a href="checkout-pagos.html" class="w-full rounded-lg h-11 bg-primary/10 text-primary dark:bg-primary dark:text-slate-50 text-sm font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center">
+          Comprar Plan
+        </a>
+        <ul class="flex flex-col gap-4 border-t border-primary/5 pt-6">
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Trámites legales básicos</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Cofre estándar</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Sala de velación (12h)</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Cremación o inhumación</li>
+        </ul>
+      </div>
+
+      <!-- Plan Familiar (destacado) -->
+      <div class="flex flex-col gap-6 rounded-xl border-2 border-primary bg-white dark:bg-slate-900 p-8 shadow-xl relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-widest">
+          Recomendado
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-primary dark:text-slate-100 text-xl font-bold">Plan Familiar</h3>
+            <span class="text-slate-50 text-[10px] uppercase font-bold tracking-wider rounded px-2 py-1 bg-primary">Popular</span>
+          </div>
+          <div class="flex items-baseline gap-1 mt-2">
+            <span class="text-primary dark:text-slate-100 text-3xl font-black leading-tight">RD$ 2,800</span>
+            <span class="text-slate-500 text-sm font-medium">/mes</span>
+          </div>
+        </div>
+        <a href="checkout-pagos.html" class="w-full rounded-lg h-11 bg-primary text-slate-50 text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center">
+          Comprar Plan
+        </a>
+        <ul class="flex flex-col gap-4 border-t border-primary/5 pt-6">
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Hasta 5 beneficiarios</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Traslado nacional incluido</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Asistencia jurídica 24/7</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Servicio de cafetería</li>
+        </ul>
+      </div>
+
+      <!-- Plan Premium -->
+      <div class="flex flex-col gap-6 rounded-xl border border-primary/10 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-primary dark:text-slate-100 text-xl font-bold">Plan Premium</h3>
+            <span class="text-slate-50 text-[10px] uppercase font-bold tracking-wider rounded px-2 py-1 bg-primary/80">Distinguido</span>
+          </div>
+          <div class="flex items-baseline gap-1 mt-2">
+            <span class="text-primary dark:text-slate-100 text-3xl font-black leading-tight">RD$ 4,500</span>
+            <span class="text-slate-500 text-sm font-medium">/mes</span>
+          </div>
+        </div>
+        <a href="checkout-pagos.html" class="w-full rounded-lg h-11 bg-primary/10 text-primary dark:bg-primary dark:text-slate-50 text-sm font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center">
+          Comprar Plan
+        </a>
+        <ul class="flex flex-col gap-4 border-t border-primary/5 pt-6">
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Cofre de lujo en madera</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Arreglos florales premium</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Acompañamiento musical</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Mesa de recordatorios VIP</li>
+        </ul>
+      </div>
+
+      <!-- Plan Preventivo -->
+      <div class="flex flex-col gap-6 rounded-xl border border-primary/10 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-primary dark:text-slate-100 text-xl font-bold">Plan Preventivo</h3>
+            <span class="text-slate-50 text-[10px] uppercase font-bold tracking-wider rounded px-2 py-1 bg-primary/40">Visión</span>
+          </div>
+          <div class="flex items-baseline gap-1 mt-2">
+            <span class="text-primary dark:text-slate-100 text-3xl font-black leading-tight">RD$ 1,200</span>
+            <span class="text-slate-500 text-sm font-medium">/mes</span>
+          </div>
+        </div>
+        <a href="checkout-pagos.html" class="w-full rounded-lg h-11 bg-primary/10 text-primary dark:bg-primary dark:text-slate-50 text-sm font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center">
+          Comprar Plan
+        </a>
+        <ul class="flex flex-col gap-4 border-t border-primary/5 pt-6">
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Planificación anticipada</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Cuotas flexibles (24-48)</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Sin límite de edad</li>
+          <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300"><span class="material-symbols-outlined text-primary text-xl">check_circle</span>Protección inmediata</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Tabla de Comparación -->
+    <div class="w-full max-w-[1200px]">
+      <h2 class="text-primary dark:text-slate-100 text-3xl font-bold mb-8 text-center md:text-left">Comparación de Beneficios</h2>
+      <div class="overflow-x-auto rounded-xl border border-primary/10 bg-white dark:bg-slate-900 shadow-sm">
+        <table class="w-full min-w-[800px] border-collapse">
+          <thead>
+            <tr class="bg-primary/5 dark:bg-slate-800">
+              <th class="px-6 py-4 text-left text-sm font-bold text-primary dark:text-slate-100 uppercase tracking-wider">Servicio</th>
+              <th class="px-6 py-4 text-center text-sm font-bold text-primary dark:text-slate-100 uppercase tracking-wider">Básico</th>
+              <th class="px-6 py-4 text-center text-sm font-bold text-primary dark:text-slate-100 uppercase tracking-wider">Familiar</th>
+              <th class="px-6 py-4 text-center text-sm font-bold text-primary dark:text-slate-100 uppercase tracking-wider">Premium</th>
+              <th class="px-6 py-4 text-center text-sm font-bold text-primary dark:text-slate-100 uppercase tracking-wider">Preventivo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-primary/10 dark:divide-slate-800">
+            <tr><td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-slate-100">Trámites Legales</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Sí</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Sí</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Sí</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Sí</td></tr>
+            <tr><td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-slate-100">Tipo de Sala</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Estándar</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Superior</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">De Lujo</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Elegible</td></tr>
+            <tr><td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-slate-100">Cofre / Urna</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Metálico Básico</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Madera Fina</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Caoba Tallada</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Personalizado</td></tr>
+            <tr><td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-slate-100">Traslados</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Local (20km)</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Nacional</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Nacional + Aéreo</td><td class="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm">Local</td></tr>
+            <tr><td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-slate-100">Cafetería Ilimitada</td><td class="px-6 py-4 text-center"><span class="material-symbols-outlined text-slate-300">close</span></td><td class="px-6 py-4 text-center"><span class="material-symbols-outlined text-primary">check</span></td><td class="px-6 py-4 text-center"><span class="material-symbols-outlined text-primary">check</span></td><td class="px-6 py-4 text-center"><span class="material-symbols-outlined text-slate-300">close</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary text-slate-100 py-16 px-6 lg:px-40">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center gap-4">
+          <div class="size-8">
+            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path></svg>
+          </div>
+          <h2 class="text-xl font-bold">Funerarias Rancier</h2>
+        </div>
+        <p class="text-slate-300 text-sm leading-relaxed">Más de 25 años brindando dignidad y consuelo a las familias dominicanas.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Enlaces Rápidos</h3>
+        <ul class="flex flex-col gap-3 text-sm text-slate-300">
+          <li><a class="hover:text-white transition-colors" href="index.html">Nosotros</a></li>
+          <li><a class="hover:text-white transition-colors" href="servicios.html">Servicios</a></li>
+          <li><a class="hover:text-white transition-colors" href="planes-funerarios.html">Planes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Legal</h3>
+        <ul class="flex flex-col gap-3 text-sm text-slate-300">
+          <li><a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a></li>
+          <li><a class="hover:text-white transition-colors" href="#">Política de Privacidad</a></li>
+          <li><a class="hover:text-white transition-colors" href="#">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Contacto 24/7</h3>
+        <ul class="flex flex-col gap-3 text-sm text-slate-300">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">phone</span>(809) 555-0123</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">mail</span>info@pazyesperanza.com.do</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">location_on</span>Santo Domingo, Rep. Dominicana</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-700 text-center text-xs text-slate-400">
+      © 2024 Funerarias Rancier. Todos los derechos reservados.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

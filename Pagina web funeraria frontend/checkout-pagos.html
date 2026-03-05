@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Checkout | Funerarias Rancier</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { "primary": "#1a2a47", "background-light": "#f6f7f8", "background-dark": "#14181e" },
+          fontFamily: { "display": ["Inter"] },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+
+  <!-- ===========================================================
+       HEADER
+       =========================================================== -->
+  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-white dark:bg-slate-900">
+    <a href="index.html" class="flex items-center gap-4 text-primary dark:text-slate-100">
+      <div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+        <span class="material-symbols-outlined">church</span>
+      </div>
+      <h2 class="text-primary dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Funerarias Rancier</h2>
+    </a>
+
+    <div class="flex flex-1 justify-end gap-8 items-center">
+      <nav class="hidden md:flex items-center gap-9">
+        <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="servicios.html">Servicios</a>
+        <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="planes-funerarios.html">Planes</a>
+        <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+      </nav>
+      <a href="dashboard.html" class="bg-primary/10 border border-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVTp0bGa611YXTtOEtRNB67FpayeFqq15weo9mnzSCGINPW_pz-wAsk5ezVlAy8DCDpJwnWe9VDSOPzeAGCrvD4lHyZ9e5Rvq7eA7haVqEdNGjzSjoVD0m4Qo_q0gFaR0D4Ytz-xzaP2DcSUgseDaC-VPiVfAwIKsrksaIJNlQWxSpBazFP4vov73CHANT6AmNl-LvSCcXiJ0NnYiSAFb3woHFbcIDxyJ3QXxmatfPxMzY3xsWIN_ondojQM8uuB23WjyzOycoM54y");'></a>
+    </div>
+  </header>
+
+  <!-- ===========================================================
+       CONTENIDO PRINCIPAL
+       =========================================================== -->
+  <main class="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 mb-8 text-sm text-slate-500 dark:text-slate-400">
+      <a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <a class="hover:text-primary transition-colors" href="planes-funerarios.html">Planes</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-primary dark:text-slate-100 font-semibold">Finalizar Compra</span>
+    </nav>
+
+    <div class="mb-10">
+      <h1 class="text-4xl font-black text-primary dark:text-slate-100 tracking-tight mb-2">Finalizar Compra</h1>
+      <p class="text-slate-600 dark:text-slate-400">Complete los detalles para procesar su solicitud de forma segura y digna.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="lg:col-span-2 space-y-10">
+
+        <!-- Paso 1: Información del Cliente -->
+        <section>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary text-white size-8 rounded-full flex items-center justify-center font-bold">1</span>
+            <h2 class="text-2xl font-bold text-primary dark:text-slate-100">Información del Cliente</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Nombre Completo</span>
+              <input class="w-full rounded-lg border-primary/20 bg-white dark:bg-slate-800 focus:border-primary focus:ring-primary h-12 px-4 dark:text-slate-100" placeholder="Ej: Juan Pérez" type="text"/>
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Cédula de Identidad</span>
+              <input class="w-full rounded-lg border-primary/20 bg-white dark:bg-slate-800 focus:border-primary focus:ring-primary h-12 px-4 dark:text-slate-100" placeholder="000-0000000-0" type="text"/>
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Correo Electrónico</span>
+              <input class="w-full rounded-lg border-primary/20 bg-white dark:bg-slate-800 focus:border-primary focus:ring-primary h-12 px-4 dark:text-slate-100" placeholder="juan.perez@email.com" type="email"/>
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Teléfono / WhatsApp</span>
+              <input class="w-full rounded-lg border-primary/20 bg-white dark:bg-slate-800 focus:border-primary focus:ring-primary h-12 px-4 dark:text-slate-100" placeholder="+1 809-000-0000" type="tel"/>
+            </label>
+          </div>
+        </section>
+
+        <!-- Paso 2: Método de Pago -->
+        <section>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary text-white size-8 rounded-full flex items-center justify-center font-bold">2</span>
+            <h2 class="text-2xl font-bold text-primary dark:text-slate-100">Método de Pago</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="relative border-2 border-primary bg-primary/5 rounded-xl p-5 cursor-pointer flex items-start gap-4">
+              <input checked class="mt-1 text-primary focus:ring-primary" name="payment_type" type="radio"/>
+              <div>
+                <p class="font-bold text-primary">Pago Único</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Cancela el total hoy y obtén un 5% de descuento.</p>
+              </div>
+            </label>
+            <label class="relative border-2 border-slate-200 dark:border-slate-700 rounded-xl p-5 cursor-pointer flex items-start gap-4 hover:border-primary/50 transition-colors">
+              <input class="mt-1 text-primary focus:ring-primary" name="payment_type" type="radio"/>
+              <div>
+                <p class="font-bold text-slate-900 dark:text-slate-100">Cuotas Mensuales</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Paga cómodamente en cuotas de 12 a 24 meses.</p>
+              </div>
+            </label>
+          </div>
+        </section>
+
+        <!-- Botón Pago Azul -->
+        <section class="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-2xl border border-primary/10">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-4xl text-blue-600">verified_user</span>
+              <div>
+                <h3 class="font-bold text-lg">Procesamiento Seguro</h3>
+                <p class="text-sm text-slate-500">Sus datos están cifrados de extremo a extremo.</p>
+              </div>
+            </div>
+            <button class="bg-[#005fb2] hover:bg-[#004a8c] text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center gap-3 transition-transform active:scale-95 shadow-lg shadow-blue-500/20">
+              Pagar con Azul
+              <span class="material-symbols-outlined">lock</span>
+            </button>
+          </div>
+          <p class="text-center text-xs text-slate-400 mt-6">
+            Al hacer clic en "Pagar con Azul", será redirigido a nuestra pasarela de pagos segura para completar su transacción.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- COLUMNA DERECHA: Resumen -->
+      <div class="lg:col-span-1">
+        <div class="sticky top-8 space-y-6">
+
+          <div class="bg-white dark:bg-slate-900 border border-primary/10 rounded-2xl overflow-hidden shadow-sm">
+            <div class="bg-primary p-6">
+              <h3 class="text-white font-bold text-xl uppercase tracking-wider">Resumen de Plan</h3>
+            </div>
+            <div class="p-6 space-y-6">
+              <div class="flex justify-between items-start">
+                <div>
+                  <p class="font-bold text-primary dark:text-slate-100">Plan de Previsión Familiar Plus</p>
+                  <p class="text-sm text-slate-500">Servicio Completo</p>
+                </div>
+                <a href="planes-funerarios.html"><span class="material-symbols-outlined text-primary">edit</span></a>
+              </div>
+              <div class="space-y-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex justify-between text-slate-600 dark:text-slate-400"><span>Subtotal</span><span>RD$ 125,000.00</span></div>
+                <div class="flex justify-between text-slate-600 dark:text-slate-400"><span>Impuestos (18% ITBIS)</span><span>RD$ 22,500.00</span></div>
+                <div class="flex justify-between text-green-600 font-medium"><span>Descuento Pago Único</span><span>- RD$ 6,250.00</span></div>
+              </div>
+              <div class="pt-6 border-t-2 border-dashed border-slate-200 dark:border-slate-700">
+                <div class="flex justify-between items-end">
+                  <span class="text-xl font-bold text-primary dark:text-slate-100">Total Final</span>
+                  <span class="text-3xl font-black text-primary dark:text-slate-100">RD$ 141,250</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-primary/5 p-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">support_agent</span>
+              <p class="text-xs text-slate-600 dark:text-slate-400">¿Necesita ayuda con su pago? Llame al <span class="font-bold">809-555-0123</span></p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 justify-center">
+            <div class="bg-white dark:bg-slate-800 h-8 w-12 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <span class="material-symbols-outlined text-slate-400 text-lg">credit_card</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 h-8 w-12 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <span class="material-symbols-outlined text-slate-400 text-lg">payments</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 h-8 w-12 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <span class="material-symbols-outlined text-slate-400 text-lg">shield_with_heart</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-primary/10 py-10 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto px-6 text-center text-slate-500 text-sm">
+      <p>© 2024 Funerarias Rancier. Todos los derechos reservados. Servicios fúnebres con dignidad y respeto.</p>
+    </div>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

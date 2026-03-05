@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<!-- ============================================================
+     HEAD - Metadatos, fuentes y configuración de Tailwind
+     ============================================================ -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Catálogo de Ataúdes y Urnas | Funerarias Rancier</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":          "#1a2a47",
+            "background-light": "#f6f7f8",
+            "background-dark":  "#14181e",
+          },
+          fontFamily: { "display": ["Inter"] },
+          borderRadius: {
+            "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+
+  <!-- ===========================================================
+       HEADER / BARRA DE NAVEGACIÓN
+       =========================================================== -->
+  <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 backdrop-blur-md dark:bg-background-dark/80 dark:border-primary/20">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+      <!-- Logo -->
+      <div class="flex items-center gap-8">
+        <a class="flex items-center gap-2 text-primary dark:text-slate-100" href="index.html">
+          <span class="material-symbols-outlined text-3xl">account_balance</span>
+          <h2 class="text-xl font-bold tracking-tight">Funerarias Rancier</h2>
+        </a>
+
+        <!-- Menú -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="index.html">Inicio</a>
+          <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="servicios.html">Servicios</a>
+          <a class="text-sm font-bold text-primary" href="catalogo.html">Catálogo</a>
+          <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+
+      <!-- Acciones -->
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center rounded-lg bg-primary/5 px-3 py-2 border border-primary/10">
+          <span class="material-symbols-outlined text-primary/60 text-xl">search</span>
+          <input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Buscar modelos..." type="text"/>
+        </div>
+        <a href="login.html" class="flex items-center justify-center p-2 rounded-full bg-primary text-white">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ===========================================================
+       CONTENIDO PRINCIPAL
+       =========================================================== -->
+  <main class="mx-auto w-full max-w-7xl grow px-6 py-8">
+
+    <!-- -----------------------------------------------------------
+         HERO DEL CATÁLOGO
+         ----------------------------------------------------------- -->
+    <div class="mb-10">
+      <nav class="flex gap-2 text-sm text-slate-500 mb-4">
+        <a class="hover:text-primary" href="index.html">Inicio</a>
+        <span>/</span>
+        <span class="font-semibold text-primary">Catálogo de Ataúdes y Urnas</span>
+      </nav>
+      <h1 class="text-4xl font-black tracking-tight text-primary dark:text-slate-100">
+        Catálogo de Ataúdes y Urnas
+      </h1>
+      <p class="mt-2 text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+        Seleccione con respeto y dignidad el descanso final de sus seres queridos.
+        Ofrecemos una amplia variedad de materiales y acabados de alta calidad.
+      </p>
+    </div>
+
+
+    <!-- -----------------------------------------------------------
+         LAYOUT: SIDEBAR FILTROS + GRID DE PRODUCTOS
+         ----------------------------------------------------------- -->
+    <div class="flex flex-col lg:flex-row gap-8">
+
+      <!-- SIDEBAR -->
+      <aside class="w-full lg:w-64 shrink-0 space-y-8">
+        <div>
+          <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
+            <span class="material-symbols-outlined text-lg">filter_list</span>
+            Filtros de Búsqueda
+          </h3>
+          <div class="space-y-6">
+
+            <!-- Filtro: Tipo -->
+            <div class="space-y-3">
+              <p class="font-semibold text-sm">Tipo de Producto</p>
+              <div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input checked class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+                  <span class="text-sm group-hover:text-primary transition-colors">Ataúdes</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+                  <span class="text-sm group-hover:text-primary transition-colors">Urnas</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Filtro: Material -->
+            <div class="space-y-3">
+              <p class="font-semibold text-sm">Material</p>
+              <div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+                  <span class="text-sm group-hover:text-primary transition-colors">Madera (Cedro, Roble)</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+                  <span class="text-sm group-hover:text-primary transition-colors">Metal (Acero, Bronce)</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+                  <span class="text-sm group-hover:text-primary transition-colors">Ecológico (Mimbre, Bambú)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Filtro: Precio -->
+            <div class="space-y-3">
+              <p class="font-semibold text-sm">Rango de Precio</p>
+              <select class="w-full rounded-lg border-slate-300 text-sm focus:border-primary focus:ring-primary">
+                <option>Todos los precios</option>
+                <option>Económico</option>
+                <option>Estándar</option>
+                <option>Premium</option>
+                <option>Lujo</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Asesoría rápida -->
+        <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+          <p class="text-xs font-bold text-primary mb-2">¿Necesita asesoría?</p>
+          <p class="text-xs text-slate-600 mb-3">Estamos disponibles las 24 horas para ayudarle a elegir la mejor opción.</p>
+          <a href="contacto.html" class="block w-full py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-all text-center">
+            Llamar ahora
+          </a>
+        </div>
+      </aside>
+
+
+      <!-- ÁREA DE PRODUCTOS -->
+      <div class="flex-1">
+
+        <!-- Barra superior -->
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-sm text-slate-500">
+            Mostrando <span class="font-bold text-slate-900 dark:text-white">12</span> modelos disponibles
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-slate-500">Ordenar por:</span>
+            <select class="text-sm border-none bg-transparent font-semibold focus:ring-0 cursor-pointer">
+              <option>Más populares</option>
+              <option>Menor precio</option>
+              <option>Mayor precio</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- GRID DE PRODUCTOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+          <!-- Tarjeta 1: Cedro Clásico -->
+          <div class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Ataúd de madera de cedro de lujo con acabado brillante" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwwuqEL5tXWhF66_cvZpkSmsUrfay0UZN3TGTAr9Ru_2niVaRmYZ-Q_cm3VYG20mK6jI9SvlG-rOe0saaVbmQGLbi2B9OkUsaTI5_2tdkrKzPA4cfYjYSPQxmAMLTH5kKMrPEgnRzVVyry3qyrlUge_q0TwU20ExGfFPqV19vVjfYt-95CUChmyy6_vyrs1UvN3Qz2lISMXT8dZ7loaWlyJhpLoUfqmrJUTr1rIl_lj4RQudxmTSRN_TAqdYWMBs6T0XtHqK1KWT0r"/>
+              <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Premium</span>
+            </div>
+            <div class="p-5 flex flex-col grow">
+              <h3 class="text-lg font-bold text-primary dark:text-white mb-1">Modelo Cedro Clásico</h3>
+              <p class="text-xs text-slate-500 mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-sm">inventory_2</span> Ataúd de Madera</p>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Material:</span><span class="font-medium">Cedro Real Macizo</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Interior:</span><span class="font-medium">Seda Blanca Acolchada</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Acabado:</span><span class="font-medium">Barniz Brillante</span></div>
+              </div>
+              <div class="mt-auto grid grid-cols-2 gap-3">
+                <button class="py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors uppercase">Ver Detalles</button>
+                <a href="contacto.html" class="py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors uppercase text-center">Solicitar Cotización</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Metalizado Premium -->
+          <div class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Ataúd metálico de color bronce con herrajes dorados" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbeeasj5R0Ab7c4Sn9j8PWBcyYY0cljAXAcmXrALnZXLNTQaVmEa1adIepZKf9A_SqmnGm8MClqyMdckN1S8qFDF-A4N6-ggJy6bvSAerrjNBMNTEF_4xZj2tuAxUZ8g-WnCWwUsCaguvA4f1Ybmf-WGi7N4NQJTvxICgRH1qiaHOMKjaErjvN-yQKu5eBteTWdmrifICTGcPTnyAMtIX4Q36eoFadTlhAWWuUV8YG0JCaTqpKKzgW56b_RRCVvrlFIDA0nWJOdHeP"/>
+              <span class="absolute top-3 left-3 bg-slate-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Resistente</span>
+            </div>
+            <div class="p-5 flex flex-col grow">
+              <h3 class="text-lg font-bold text-primary dark:text-white mb-1">Metalizado Premium</h3>
+              <p class="text-xs text-slate-500 mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-sm">precision_manufacturing</span> Ataúd de Metal</p>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Material:</span><span class="font-medium">Acero Calibre 18</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Interior:</span><span class="font-medium">Terciopelo Champán</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Acabado:</span><span class="font-medium">Capa Selladora Hermética</span></div>
+              </div>
+              <div class="mt-auto grid grid-cols-2 gap-3">
+                <button class="py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors uppercase">Ver Detalles</button>
+                <a href="contacto.html" class="py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors uppercase text-center">Solicitar Cotización</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Ecológico de Mimbre -->
+          <div class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Ataúd ecológico tejido de mimbre natural" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7wIp8R5dd4EB_7ErF9rMVvaxT9euhiaVyRPSpy_oVBCW0kjgl8ajanZwFgcG9_M9OMPVpCqoweLdAmX8S45nuNOcqEvdMfBk1KijiiO7pU19u5zukf2CGhVJ0YojfCmwuJkv-KK7di8FkfyXssTm1lK4xcF4-7jd-ldI6tgVvnwXY8qhRLqCbd3K7DGpzjc6JSwYae068q_HXGK8BuH2CECjX7hpim2bMTqGuavjuQhinxXGQMqnY43JcK-iBrg550-g9c_a-UlZ3"/>
+              <span class="absolute top-3 left-3 bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Ecológico</span>
+            </div>
+            <div class="p-5 flex flex-col grow">
+              <h3 class="text-lg font-bold text-primary dark:text-white mb-1">Ecológico de Mimbre</h3>
+              <p class="text-xs text-slate-500 mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-sm">eco</span> Sostenible</p>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Material:</span><span class="font-medium">Mimbre Natural Tejido</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Interior:</span><span class="font-medium">Lino Biodegradable</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Acabado:</span><span class="font-medium">Sin Químicos / Tintes</span></div>
+              </div>
+              <div class="mt-auto grid grid-cols-2 gap-3">
+                <button class="py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors uppercase">Ver Detalles</button>
+                <a href="contacto.html" class="py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors uppercase text-center">Solicitar Cotización</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Urna Mármol Eterno -->
+          <div class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Urna de mármol pulido para cenizas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1A7eaZdNGoTb405ZStRxh4gYVOMhR-cSmwAxmk28MTbmLiG2tCDtMdkRCiZ427wbTGVH0D9aUCgGYNIzINxmfTAc5sfbaRuSqXC9Yrc0rOja3Oe3tlVZ9jmH571pqGmZiuIbbG_Y3oryk9bhCBPJ56NT_Ty2yQ2rKEqKki99qE5_Vq2GBg1rci98kwiOuaSamdxZUM2o119Qb9lmuQuMOdg1oDZzO1mITevAFEzBjIiBKQYKMHm9i_MJqQ5tN8ngWATDcjoZ2oZB7"/>
+            </div>
+            <div class="p-5 flex flex-col grow">
+              <h3 class="text-lg font-bold text-primary dark:text-white mb-1">Urna Mármol Eterno</h3>
+              <p class="text-xs text-slate-500 mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-sm">udon</span> Urna de Cremación</p>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Material:</span><span class="font-medium">Mármol Blanco Carrara</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Interior:</span><span class="font-medium">Compartimento Sellado</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Acabado:</span><span class="font-medium">Pulido Espejo</span></div>
+              </div>
+              <div class="mt-auto grid grid-cols-2 gap-3">
+                <button class="py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors uppercase">Ver Detalles</button>
+                <a href="contacto.html" class="py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors uppercase text-center">Solicitar Cotización</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 5: Roble Majestuoso -->
+          <div class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Ataúd de madera de roble oscuro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWrVogbBLP6U4ECMm1iryt-QoxvnatMXwQVNA80XeuevqNRzt11qMVq5rWZgl78PeP0MyKT7AhT_OfM8h4_5tWW-ur4jbxojkS4EcIDr_cyzT3IIvL2UxfpjhaysEoAz_Bs55d5br7mxsj6CpmsrNxPVoWUIBNnluwWmpsZPORYnTNOrbGRjsuGMK3xHPuk8mF1WR4Yzg5xpFRpTxkvjvMkwbIauQEW_hSa9MKFrByX3bTDbyZA0q7hujN_LRdCI_S7MaZJE3oB3P-"/>
+            </div>
+            <div class="p-5 flex flex-col grow">
+              <h3 class="text-lg font-bold text-primary dark:text-white mb-1">Roble Majestuoso</h3>
+              <p class="text-xs text-slate-500 mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-sm">inventory_2</span> Ataúd de Madera</p>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Material:</span><span class="font-medium">Roble Sólido Americano</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Interior:</span><span class="font-medium">Terciopelo Azul Real</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Acabado:</span><span class="font-medium">Mate Satinado</span></div>
+              </div>
+              <div class="mt-auto grid grid-cols-2 gap-3">
+                <button class="py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors uppercase">Ver Detalles</button>
+                <a href="contacto.html" class="py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors uppercase text-center">Solicitar Cotización</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 6: Urna Minimalista Acero -->
+          <div class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Urna minimalista de acero inoxidable" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaUv5YJW2tcliyag8DKIOJG2vy0DOBpR7ekUoP2ChwlMkx7Juqok6TNiMgw3wzQtviiia7fuBarp4ZXkXpDooqzpb8niclJogZtSAqfsvtYG97X6vpHKlpK1rz_LQUrAiR4JpxwQOLxx45OCHdPJj2c1MSJjK0T483Al_BdG3AL0gR5_75BfeEbu1N1XVh2GVuZYCRP84HSFDeRNydlboCWr4qAawcANw3tZlt1JI2GxgoC7g1ng2IunrgPNbZ_G59sVn4kFxN77j3"/>
+            </div>
+            <div class="p-5 flex flex-col grow">
+              <h3 class="text-lg font-bold text-primary dark:text-white mb-1">Urna Minimalista Acero</h3>
+              <p class="text-xs text-slate-500 mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-sm">udon</span> Urna de Cremación</p>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Material:</span><span class="font-medium">Acero Inoxidable Cepillado</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Interior:</span><span class="font-medium">Saco de Terciopelo</span></div>
+                <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Acabado:</span><span class="font-medium">Mate Antihuellas</span></div>
+              </div>
+              <div class="mt-auto grid grid-cols-2 gap-3">
+                <button class="py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors uppercase">Ver Detalles</button>
+                <a href="contacto.html" class="py-2 text-xs font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors uppercase text-center">Solicitar Cotización</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Fin Grid -->
+
+        <!-- PAGINACIÓN -->
+        <div class="mt-12 flex items-center justify-center gap-2">
+          <button class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+          <button class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-slate-50 font-bold">2</button>
+          <button class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-slate-50 font-bold">3</button>
+          <button class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ===========================================================
+       FOOTER
+       =========================================================== -->
+  <footer class="mt-20 border-t border-primary/10 bg-white dark:bg-slate-900 pt-16 pb-8">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center gap-2 text-primary dark:text-white mb-6">
+            <span class="material-symbols-outlined text-2xl">account_balance</span>
+            <span class="text-xl font-bold tracking-tight">Funerarias Rancier</span>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed">Brindando consuelo y servicios de alta calidad con respeto y dignidad desde hace más de 40 años.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-primary dark:text-white mb-6">Servicios</h4>
+          <ul class="space-y-4 text-sm text-slate-500">
+            <li><a class="hover:text-primary" href="servicios.html">Servicios Funerarios</a></li>
+            <li><a class="hover:text-primary" href="servicios.html">Cremación</a></li>
+            <li><a class="hover:text-primary" href="servicios.html">Trámites Legales</a></li>
+            <li><a class="hover:text-primary" href="planes-funerarios.html">Previsión Familiar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-primary dark:text-white mb-6">Catálogo</h4>
+          <ul class="space-y-4 text-sm text-slate-500">
+            <li><a class="hover:text-primary" href="catalogo.html">Ataúdes de Madera</a></li>
+            <li><a class="hover:text-primary" href="catalogo.html">Ataúdes Metálicos</a></li>
+            <li><a class="hover:text-primary" href="catalogo.html">Urnas de Cenizas</a></li>
+            <li><a class="hover:text-primary" href="catalogo.html">Flores y Arreglos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-primary dark:text-white mb-6">Contacto</h4>
+          <ul class="space-y-4 text-sm text-slate-500">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span>800-FUNERAL</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span>contacto@funeraria.com</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span>Av. Principal 123, Ciudad</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-400">© 2026 Funerarias Rancier. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-6">
+          <a class="text-xs text-slate-400 hover:text-primary" href="#">Términos y Condiciones</a>
+          <a class="text-xs text-slate-400 hover:text-primary" href="#">Política de Privacidad</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

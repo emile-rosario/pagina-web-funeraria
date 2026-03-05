@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { "primary": "#1a2a47", "background-light": "#f6f7f8", "background-dark": "#14181e" },
+          fontFamily: { "display": ["Inter", "sans-serif"] },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <title>Panel de Cliente - Funerarias Rancier</title>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+  <div class="flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <aside
+      class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden md:flex flex-col">
+
+      <!-- Logo -->
+      <div class="p-6 flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="size-10 rounded-full bg-primary flex items-center justify-center text-white">
+            <span class="material-symbols-outlined">folded_hands</span>
+          </div>
+          <div>
+            <h1 class="text-sm font-bold text-primary dark:text-slate-100 leading-tight">Funerarias Rancier</h1>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Portal del Cliente</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="flex-1 px-4 space-y-1 mt-4">
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="text-sm font-medium">Inicio</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+          href="planes-funerarios.html">
+          <span class="material-symbols-outlined">article</span>
+          <span class="text-sm font-medium">Mi Plan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+          href="checkout-pagos.html">
+          <span class="material-symbols-outlined">payments</span>
+          <span class="text-sm font-medium">Pagos</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+          href="#">
+          <span class="material-symbols-outlined">folder_open</span>
+          <span class="text-sm font-medium">Documentos</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+          href="contacto.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          <span class="text-sm font-medium">Soporte</span>
+        </a>
+      </nav>
+
+      <!-- User Profile -->
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-3 px-2">
+          <div
+            class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+            <img alt="Avatar"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp4KIxTuBs-Qkryb6EYsTZl0RI2YIKdc4S5SU2jFobDRQSXoAokAkv6ZcfHhUt217tGtOIOeM4ZyEKxGJ9jBV3WGGxHZ-Xgnap6TWSCQ7UWBd3jzZpVDD2kJ1TJNT3Ky_A7Tk6NUMRvYkYYt-SYR1FJvzoCVSJ7cmfrWBRgwdiN-9Ky_Mm0D1TYe0q-s4Pfv_mSONFpChInlC9BwetNCd0aB1jueF7vuLLSGhxhY7dijpCN8Wb5Fpi2m0rGoFSJ5c93_8wYO_8DfXa" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium truncate" id="sidebar-user-name">Usuario</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 truncate">Cliente</p>
+          </div>
+          <a href="#" onclick="cerrarSesion()" title="Cerrar Sesión"><span
+              class="material-symbols-outlined text-slate-400 hover:text-red-500 text-lg transition-colors">logout</span></a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 flex flex-col">
+
+      <!-- Header -->
+      <header
+        class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8 sticky top-0 z-10">
+        <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">Panel Principal</h2>
+        <div class="flex items-center gap-4">
+          <button class="relative p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+            <span class="material-symbols-outlined">notifications</span>
+            <span
+              class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+          </button>
+          <button
+            class="flex items-center gap-2 px-3 py-1.5 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800">
+            <span class="material-symbols-outlined text-lg">settings</span>
+            <span>Ajustes</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="p-8 space-y-8">
+
+        <!-- Welcome -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h1 class="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight" id="welcome-title">Hola,
+              Usuario</h1>
+            <div class="mt-2 flex items-center gap-2">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                <span class="size-1.5 rounded-full bg-green-500 mr-1.5"></span>
+                Estado del Plan: Activo
+              </span>
+              <span class="text-sm text-slate-500 dark:text-slate-400">• Miembro desde Mayo 2021</span>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <button
+              class="flex items-center gap-2 px-4 py-2 border border-primary text-primary dark:border-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+              Descargar Contrato
+            </button>
+            <a href="checkout-pagos.html"
+              class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg text-sm font-bold shadow-sm hover:bg-primary/90 transition-all">
+              <span class="material-symbols-outlined text-lg">credit_card</span>
+              Pagar Cuota Pendiente
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Próximo Pago
+              </p>
+              <span class="material-symbols-outlined text-primary dark:text-slate-500">event</span>
+            </div>
+            <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">15 Oct 2023</p>
+            <div class="mt-2 flex items-center text-sm">
+              <span class="text-orange-600 font-semibold">12 días restantes</span>
+            </div>
+          </div>
+          <div
+            class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Cuota Actual
+              </p>
+              <span class="material-symbols-outlined text-primary dark:text-slate-500">payments</span>
+            </div>
+            <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">$50.00</p>
+            <div class="mt-2 flex items-center text-sm text-slate-500"><span>Plan Integral de Vida</span></div>
+          </div>
+          <div
+            class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Beneficiarios
+              </p>
+              <span class="material-symbols-outlined text-primary dark:text-slate-500">group</span>
+            </div>
+            <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">4 Personas</p>
+            <div class="mt-2 flex items-center text-sm text-blue-600 hover:underline cursor-pointer"><span>Ver detalles
+                del grupo</span></div>
+          </div>
+        </div>
+
+        <!-- Pagos + Documentos -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          <!-- Historial de Pagos -->
+          <div
+            class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+              <h3 class="font-bold text-slate-800 dark:text-slate-100">Historial de Pagos</h3>
+              <a href="checkout-pagos.html"
+                class="text-sm text-primary dark:text-slate-400 font-medium hover:underline">Ver todo</a>
+            </div>
+            <div class="divide-y divide-slate-100 dark:divide-slate-800">
+              <div
+                class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="size-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+                    <span class="material-symbols-outlined">check_circle</span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold">Mensualidad Septiembre</p>
+                    <p class="text-xs text-slate-500">14 Sep 2023 • Tarjeta Visa</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-bold">$50.00</p>
+                  <p class="text-[10px] text-green-600 font-bold uppercase">Pagado</p>
+                </div>
+              </div>
+              <div
+                class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="size-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+                    <span class="material-symbols-outlined">check_circle</span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold">Mensualidad Agosto</p>
+                    <p class="text-xs text-slate-500">15 Ago 2023 • Transferencia</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-bold">$50.00</p>
+                  <p class="text-[10px] text-green-600 font-bold uppercase">Pagado</p>
+                </div>
+              </div>
+              <div
+                class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="size-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+                    <span class="material-symbols-outlined">check_circle</span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold">Mensualidad Julio</p>
+                    <p class="text-xs text-slate-500">13 Jul 2023 • Tarjeta Visa</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-bold">$50.00</p>
+                  <p class="text-[10px] text-green-600 font-bold uppercase">Pagado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documentos Recientes -->
+          <div
+            class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+              <h3 class="font-bold text-slate-800 dark:text-slate-100">Documentos Recientes</h3>
+              <button class="text-sm text-primary dark:text-slate-400 font-medium hover:underline">Gestionar</button>
+            </div>
+            <div class="p-6 grid grid-cols-1 gap-4">
+              <div
+                class="flex items-center p-3 border border-slate-100 dark:border-slate-800 rounded-lg group cursor-pointer hover:border-primary/30 transition-all">
+                <div class="size-10 flex items-center justify-center bg-red-50 text-red-600 rounded">
+                  <span class="material-symbols-outlined">picture_as_pdf</span>
+                </div>
+                <div class="ml-4 flex-1">
+                  <p class="text-sm font-semibold">Contrato_Servicios_FPaz.pdf</p>
+                  <p class="text-xs text-slate-500">2.4 MB • Actualizado hace 3 meses</p>
+                </div>
+                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">download</span>
+              </div>
+              <div
+                class="flex items-center p-3 border border-slate-100 dark:border-slate-800 rounded-lg group cursor-pointer hover:border-primary/30 transition-all">
+                <div class="size-10 flex items-center justify-center bg-blue-50 text-blue-600 rounded">
+                  <span class="material-symbols-outlined">description</span>
+                </div>
+                <div class="ml-4 flex-1">
+                  <p class="text-sm font-semibold">Reglamento_Cobertura.pdf</p>
+                  <p class="text-xs text-slate-500">1.1 MB • Versión 2023</p>
+                </div>
+                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">download</span>
+              </div>
+              <div
+                class="flex items-center p-3 border border-slate-100 dark:border-slate-800 rounded-lg group cursor-pointer hover:border-primary/30 transition-all">
+                <div class="size-10 flex items-center justify-center bg-slate-50 text-slate-600 rounded">
+                  <span class="material-symbols-outlined">receipt</span>
+                </div>
+                <div class="ml-4 flex-1">
+                  <p class="text-sm font-semibold">Ultimo_Recibo_Pago.pdf</p>
+                  <p class="text-xs text-slate-500">450 KB • 14 Sep 2023</p>
+                </div>
+                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">download</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner -->
+        <div class="relative bg-primary rounded-2xl overflow-hidden p-8 flex flex-col md:flex-row items-center gap-8">
+          <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute inset-0"
+              style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;">
+            </div>
+          </div>
+          <div class="relative z-10 flex-1">
+            <h3 class="text-2xl font-bold text-white mb-2">Estamos aquí para apoyarte</h3>
+            <p class="text-slate-300 max-w-xl">En momentos difíciles, nuestro equipo de asistencia está disponible 24/7
+              para guiarte en cada paso.</p>
+            <div class="mt-6 flex flex-wrap gap-4">
+              <a class="flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-full text-sm font-bold hover:bg-slate-100 transition-colors"
+                href="tel:0800123456">
+                <span class="material-symbols-outlined text-lg">call</span>0800-123-456
+              </a>
+              <a href="contacto.html"
+                class="flex items-center gap-2 px-6 py-3 bg-primary/20 border border-white/20 text-white rounded-full text-sm font-bold hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-lg">chat</span>Chat en vivo
+              </a>
+            </div>
+          </div>
+          <div class="relative z-10 hidden lg:block">
+            <div class="size-48 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+              <span class="material-symbols-outlined text-[80px] text-white/50">support_agent</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="mt-auto px-8 py-6 border-t border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-xs flex justify-between">
+        <p>© 2023 Funerarias Rancier. Todos los derechos reservados.</p>
+        <div class="flex gap-4">
+          <a class="hover:text-primary" href="#">Términos y Condiciones</a>
+          <a class="hover:text-primary" href="#">Privacidad</a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- API Helper -->
+  <script src="assets/js/api.js"></script>
+  <script>
+    // Auth guard: redirigir al login si no hay sesión
+    if (!requireAuth()) {
+      // requireAuth() ya redirige, pero detenemos el script
+    } else {
+      // Mostrar el nombre real del usuario en la página
+      const nombreUsuario = getUsuarioNombre();
+      document.getElementById('welcome-title').textContent = `Hola, ${nombreUsuario}`;
+      document.getElementById('sidebar-user-name').textContent = nombreUsuario;
+    }
+  </script>
+</body>
+
+</html>

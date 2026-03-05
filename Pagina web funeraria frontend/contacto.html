@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Contacto - Funerarias Rancier</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { "primary": "#1a2a47", "background-light": "#f6f7f8", "background-dark": "#14181e" },
+          fontFamily: { "display": ["Inter"] },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+
+  <!-- ===========================================================
+       HEADER
+       =========================================================== -->
+  <header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-background-dark px-6 md:px-20 py-4 sticky top-0 z-50">
+    <a href="index.html" class="flex items-center gap-4 text-primary dark:text-slate-100">
+      <div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+        <span class="material-symbols-outlined">church</span>
+      </div>
+      <h2 class="text-xl font-bold leading-tight tracking-tight">Funerarias Rancier</h2>
+    </a>
+
+    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+      <nav class="flex items-center gap-8">
+        <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-white transition-colors" href="index.html">Inicio</a>
+        <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-white transition-colors" href="servicios.html">Servicios</a>
+        <a class="text-primary dark:text-white text-sm font-bold border-b-2 border-primary" href="contacto.html">Contacto</a>
+      </nav>
+      <a href="contacto.html" class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all">
+        Llamar ahora
+      </a>
+    </div>
+
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-primary dark:text-white">menu</span>
+    </div>
+  </header>
+
+  <!-- ===========================================================
+       CONTENIDO PRINCIPAL
+       =========================================================== -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="lg:col-span-8 flex flex-col gap-8">
+        <div class="space-y-4">
+          <h1 class="text-4xl md:text-5xl font-black text-primary dark:text-white tracking-tight">Contacte con nosotros</h1>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+            Estamos a su entera disposición las 24 horas del día para ofrecerle el apoyo y asesoramiento necesario en estos momentos difíciles.
+          </p>
+        </div>
+
+        <!-- Formulario -->
+        <form class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-primary/5 flex flex-col gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold text-primary dark:text-slate-200">Nombre completo</span>
+              <input class="rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary p-3" placeholder="Ej. Juan Pérez" type="text"/>
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold text-primary dark:text-slate-200">Correo electrónico</span>
+              <input class="rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary p-3" placeholder="correo@ejemplo.com" type="email"/>
+            </label>
+          </div>
+          <label class="flex flex-col gap-2">
+            <span class="text-sm font-semibold text-primary dark:text-slate-200">Asunto</span>
+            <input class="rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary p-3" placeholder="Motivo de su consulta" type="text"/>
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="text-sm font-semibold text-primary dark:text-slate-200">Mensaje</span>
+            <textarea class="rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary p-3 resize-none" placeholder="¿En qué podemos ayudarle?" rows="5"></textarea>
+          </label>
+          <button class="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-colors flex items-center justify-center gap-2 self-start min-w-[200px]" type="submit">
+            <span>Enviar mensaje</span>
+            <span class="material-symbols-outlined text-sm">send</span>
+          </button>
+        </form>
+
+        <!-- Mapa -->
+        <div class="rounded-xl overflow-hidden border border-primary/10 shadow-sm h-80 relative group">
+          <div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+            <div class="text-center">
+              <span class="material-symbols-outlined text-5xl text-primary/40 dark:text-slate-600 mb-2">map</span>
+              <p class="text-slate-500 dark:text-slate-400 font-medium">Ubicación principal: Av. de la Paz, 10, Madrid</p>
+            </div>
+          </div>
+          <img class="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" alt="Mapa de ubicación" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZYrmhv66t3M65bEx2cL4TZwP8wRRlFeU1EE-4EHfzEvMT3bxQ1s8UnaiTsuDll12_vQdr5tymaZNMEshrE5P-Ys--zR2FOHpIO-3IEA-c5xn_yIw1VAJA_jUrwYqjKP6QUYl1ljLudTKrEtR-bt9VkogrUnkNTocSQzcpx_RyFCl46narP7UpCpBJX4vdb5OZDyuij_p6NVvo2Kj5bb95V1AE92XXncEO1s7B9a-wZ24HHYy922z_Gs8c3Z-c1kjvYQc_TSKTG0Ma"/>
+          <div class="absolute bottom-4 left-4 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-lg border border-primary/5">
+            <p class="font-bold text-primary dark:text-white flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">location_on</span>
+              Funerarias Rancier Central
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Abierto 24 horas todos los días del año</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR DERECHO -->
+      <aside class="lg:col-span-4 flex flex-col gap-6">
+
+        <!-- Emergencias 24h -->
+        <div class="bg-primary text-white p-8 rounded-xl flex flex-col gap-6 shadow-xl relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined text-white">emergency</span>
+              <h3 class="text-sm font-bold uppercase tracking-widest text-white/80">Atención Inmediata</h3>
+            </div>
+            <h4 class="text-2xl font-bold mb-1">Emergencias 24h</h4>
+            <p class="text-white/70 text-sm mb-6 leading-relaxed">Estamos disponibles en cualquier momento para atender su solicitud de forma inmediata.</p>
+            <a class="flex flex-col gap-1 group" href="tel:900123456">
+              <span class="text-4xl md:text-5xl font-black tracking-tight group-hover:text-white/90 transition-colors">900 123 456</span>
+              <span class="text-xs font-medium text-white/50">Llamada gratuita</span>
+            </a>
+          </div>
+          <span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[200px] text-white/5 pointer-events-none">call</span>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="bg-[#25D366]/10 border border-[#25D366]/20 p-6 rounded-xl flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="size-12 bg-[#25D366] text-white rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined fill-1">chat</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-white">WhatsApp Directo</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Respuesta rápida por chat</p>
+            </div>
+          </div>
+          <button class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+            <span>Escribir por WhatsApp</span>
+          </button>
+        </div>
+
+        <!-- Otras formas de contacto -->
+        <div class="bg-white dark:bg-slate-900 border border-primary/5 p-8 rounded-xl flex flex-col gap-6 shadow-sm">
+          <h4 class="font-bold text-primary dark:text-white text-lg">Otras formas de contacto</h4>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary dark:text-slate-400">mail</span>
+            <div>
+              <p class="text-sm font-bold text-primary dark:text-white">Correo electrónico</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400">atencion@tanatoriopaz.com</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary dark:text-slate-400">schedule</span>
+            <div>
+              <p class="text-sm font-bold text-primary dark:text-white">Horario Administrativo</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Lunes a Viernes: 09:00 - 18:00</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary dark:text-slate-400">share</span>
+            <div class="flex gap-4 mt-1">
+              <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+              <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-background-dark border-t border-primary/5 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2 text-primary/50 dark:text-slate-500">
+        <span class="material-symbols-outlined text-sm">church</span>
+        <span class="text-sm font-medium">© 2024 Funerarias Rancier - Todos los derechos reservados.</span>
+      </div>
+      <div class="flex gap-6 text-sm text-slate-500">
+        <a class="hover:text-primary transition-colors" href="#">Aviso Legal</a>
+        <a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+        <a class="hover:text-primary transition-colors" href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

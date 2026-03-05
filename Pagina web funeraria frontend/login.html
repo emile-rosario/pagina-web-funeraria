@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<!-- ============================================================
+     HEAD
+     - Configuración del documento, fuentes y estilos
+     ============================================================ -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Login | Funerarias Rancier</title>
+
+  <!-- Tailwind CSS: framework de estilos (clases de diseño listas para usar) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fuente Inter de Google (tipografía del sitio) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Material Symbols: íconos de Google (mail, lock, church, etc.) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Configuración de colores y fuentes personalizados para Tailwind -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class", // El modo oscuro se activa añadiendo la clase "dark" al <html>
+      theme: {
+        extend: {
+          colors: {
+            "primary":          "#1a2a47", // Azul oscuro — color principal de la marca
+            "background-light": "#f6f7f8", // Fondo claro (modo normal)
+            "background-dark":  "#14181e", // Fondo oscuro (modo noche)
+          },
+          fontFamily: {
+            "display": ["Inter"] // Inter como fuente por defecto en todo el sitio
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "full":    "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+
+
+<!-- ============================================================
+     BODY
+     - Estructura visual de la página de login
+     ============================================================ -->
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+
+
+  <!-- ===========================================================
+       HEADER — Barra de navegación superior
+       - Logo de la funeraria
+       - Links de navegación a otras páginas
+       =========================================================== -->
+  <header class="w-full bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Logo: ícono + nombre de la empresa -->
+        <a href="index.html" class="flex items-center gap-2 text-primary dark:text-slate-100">
+          <div class="size-8 bg-primary text-white flex items-center justify-center rounded-lg">
+            <span class="material-symbols-outlined">church</span>
+          </div>
+          <span class="text-xl font-bold tracking-tight">Funerarias Rancier</span>
+        </a>
+
+        <!-- Menú de navegación (solo visible en pantallas medianas en adelante) -->
+        <nav class="hidden md:flex space-x-8">
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium" href="index.html">Inicio</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium" href="servicios.html">Servicios</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium" href="planes-funerarios.html">Planes</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium" href="contacto.html">Contacto</a>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ===========================================================
+       MAIN — Contenido principal (la tarjeta de login centrada)
+       =========================================================== -->
+  <main class="flex-grow flex items-center justify-center p-4 py-12">
+    <div class="w-full max-w-md">
+
+
+      <!-- -----------------------------------------------------------
+           TARJETA DE LOGIN
+           - Imagen decorativa arriba
+           - Formulario de correo y contraseña abajo
+           ----------------------------------------------------------- -->
+      <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+
+
+        <!-- Encabezado visual de la tarjeta (fondo azul con imagen) -->
+        <div class="h-32 bg-primary relative overflow-hidden">
+
+          <!-- Imagen de fondo con opacidad reducida -->
+          <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1000&auto=format&fit=crop')]"></div>
+
+          <!-- Degradado de abajo hacia arriba para que el texto se lea bien -->
+          <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent"></div>
+
+          <!-- Título sobre la imagen -->
+          <div class="absolute bottom-4 left-6">
+            <h1 class="text-white text-2xl font-bold">Portal del Cliente</h1>
+            <p class="text-slate-300 text-xs">Gestión de servicios y planes</p>
+          </div>
+
+        </div>
+        <!-- Fin encabezado visual -->
+
+
+        <!-- Cuerpo de la tarjeta: el formulario de login -->
+        <div class="p-8">
+
+          <!--
+            FORMULARIO DE LOGIN
+            id="login-form" → el JavaScript lo captura por este ID
+            El "submit" lo maneja el script al final, NO el HTML por defecto
+          -->
+          <form id="login-form" class="space-y-6">
+
+
+            <!-- ----- Campo: Correo Electrónico ----- -->
+            <div>
+              <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="email">
+                Correo Electrónico
+              </label>
+              <div class="relative">
+                <!-- Ícono decorativo a la izquierda del input -->
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                  <span class="material-symbols-outlined text-xl">mail</span>
+                </span>
+                <input
+                  class="block w-full pl-10 pr-3 py-3 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  id="email"
+                  name="email"
+                  placeholder="ejemplo@correo.com"
+                  required
+                  type="email"
+                />
+              </div>
+            </div>
+
+
+            <!-- ----- Campo: Contraseña ----- -->
+            <div>
+              <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="password">
+                Contraseña
+              </label>
+              <div class="relative">
+                <!-- Ícono de candado a la izquierda -->
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                  <span class="material-symbols-outlined text-xl">lock</span>
+                </span>
+                <input
+                  class="block w-full pl-10 pr-10 py-3 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  id="password"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                  type="password"
+                />
+                <!-- Botón para mostrar/ocultar la contraseña (ícono del ojo) -->
+                <button
+                  class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600"
+                  type="button"
+                  onclick="togglePassword()"
+                >
+                  <span class="material-symbols-outlined text-xl" id="eye-icon">visibility</span>
+                </button>
+              </div>
+            </div>
+
+
+            <!-- ----- Fila: "Recordarme" + "¿Olvidó su contraseña?" ----- -->
+            <div class="flex items-center justify-between">
+
+              <!-- Checkbox Recordarme -->
+              <div class="flex items-center">
+                <input class="h-4 w-4 text-primary focus:ring-primary border-slate-300 rounded" id="remember-me" name="remember-me" type="checkbox"/>
+                <label class="ml-2 block text-sm text-slate-600 dark:text-slate-400" for="remember-me">
+                  Recordarme
+                </label>
+              </div>
+
+              <!-- Enlace de recuperación de contraseña -->
+              <div class="text-sm">
+                <a class="font-medium text-primary hover:underline" href="#">¿Olvidó su contraseña?</a>
+              </div>
+
+            </div>
+
+
+            <!-- ----- Botón de envío del formulario ----- -->
+            <div>
+              <button
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
+                type="submit"
+              >
+                Iniciar Sesión
+              </button>
+            </div>
+
+
+          </form>
+          <!-- Fin formulario -->
+
+
+          <!-- Enlace inferior para usuarios sin plan -->
+          <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              ¿No tiene un plan?
+              <a class="font-semibold text-primary hover:underline ml-1" href="planes-funerarios.html">
+                Ver Planes Disponibles
+              </a>
+            </p>
+          </div>
+
+        </div>
+        <!-- Fin cuerpo tarjeta -->
+
+      </div>
+      <!-- Fin tarjeta de login -->
+
+
+      <!-- Texto y accesos rápidos debajo de la tarjeta -->
+      <div class="mt-8 text-center">
+
+        <!-- Mensaje de confianza -->
+        <p class="text-xs text-slate-500 dark:text-slate-500 uppercase tracking-widest font-medium">
+          Comprometidos con su tranquilidad en momentos difíciles
+        </p>
+
+        <!-- Íconos de acceso rápido: ayuda, chat, idioma -->
+        <div class="mt-4 flex justify-center gap-4">
+          <a class="text-slate-400 hover:text-primary transition-colors" href="contacto.html">
+            <span class="material-symbols-outlined text-lg">help_outline</span>
+          </a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="contacto.html">
+            <span class="material-symbols-outlined text-lg">chat_bubble_outline</span>
+          </a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="#">
+            <span class="material-symbols-outlined text-lg">language</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ===========================================================
+       FOOTER — Pie de página simple
+       =========================================================== -->
+  <footer class="w-full py-6 px-4 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-slate-500 dark:text-slate-400 text-xs">
+      <p>© 2024 Funerarias Rancier. Todos los derechos reservados.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a class="hover:text-primary" href="#">Términos de Servicio</a>
+        <a class="hover:text-primary" href="#">Política de Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===========================================================
+       JAVASCRIPT
+       - Toda la lógica de la página va aquí al final del body
+       - Así el HTML carga primero y el JS no lo bloquea
+       =========================================================== -->
+  <!-- API Helper (funciones centralizadas) -->
+  <script src="assets/js/api.js"></script>
+
+  <script>
+    // Si ya está logueado, redirigir al dashboard
+    if (getToken()) {
+      window.location.href = "dashboard.html";
+    }
+
+    // Mostrar/ocultar contraseña
+    function togglePassword() {
+      const inputPassword = document.getElementById('password');
+      const eyeIcon       = document.getElementById('eye-icon');
+      if (inputPassword.type === 'password') {
+        inputPassword.type = 'text';
+        eyeIcon.textContent = 'visibility_off';
+      } else {
+        inputPassword.type = 'password';
+        eyeIcon.textContent = 'visibility';
+      }
+    }
+
+    // Enviar formulario de login usando la función centralizada
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email    = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      await iniciarSesion(email, password);
+    });
+  </script>
+
+</body>
+</html>
